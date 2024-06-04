@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use('/urls', urlRoutes);
 
 // START API
-const PORT = process.env.PORT || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
@@ -26,7 +26,6 @@ app.use(express.static(__dirname));
 // SEND HTML
 app.get('/', (req, res) => {
     // Passa a variável de ambiente para o arquivo HTML
-    const SERVER_IP = '192.168.3.18';
     res.sendFile(path.join(__dirname, 'index.html'));
   });
 
